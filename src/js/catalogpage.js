@@ -173,6 +173,8 @@ async function selectFilter(e) {
   const elem = e.target;
   const filterValue = elem.dataset.filterValue;
   if (filterValue === undefined) return;
+  // hide ul-element after "click"
+  elem.parentElement.style.display = "none";
 
   currentPageOfProductsList = 1;
   // change filter/sort value and style if "click" on li
@@ -200,6 +202,8 @@ async function selectFilter(e) {
   updateAmountOfProductsText();
   // update pages navigation buttons
   showPageNavButtons();
+  // return ul-element default display status
+  elem.parentElement.style.display = "";
 }
 
 //  all filters and sort reset-button
@@ -208,18 +212,16 @@ resetButton.addEventListener("click", resetFiltersAndSort);
 
 async function resetFiltersAndSort() {
   currentPageOfProductsList = 1;
-  // change all current filters values on default
+  // change all current filters values&style on default
   arrayFiltersParents.map((parentElem) => {
     parentElem.firstElementChild.textContent =
       "Choose the " + parentElem.dataset.filter;
-    parentElem.firstElementChild.style.textShadow = "none";
-    parentElem.firstElementChild.style.background = "none";
+    parentElem.firstElementChild.classList.remove("active");
   });
 
-  // change sort current  value on default
+  // change sort current  value&style on default
   sortOrder.firstElementChild.textContent = "Default Sorting";
-  sortOrder.firstElementChild.style.textShadow = "none";
-  sortOrder.firstElementChild.style.background = "none";
+  sortOrder.firstElementChild.classList.remove("active");
 
   // re-draw default suitcase catalog
   totalAmountOfProducts = await drawProducts(
@@ -315,6 +317,13 @@ async function goNextOrPrevPage(e) {
 
   // update pages navigation buttons
   showPageNavButtons();
+
+  // scroll window to top for UX
+  window.scrollTo({
+    top: amountOfProductsText.getBoundingClientRect().top + window.scrollY,
+    left: 0,
+    behavior: "smooth",
+  });
 }
 
 // add to cart through 'click' on products logic
