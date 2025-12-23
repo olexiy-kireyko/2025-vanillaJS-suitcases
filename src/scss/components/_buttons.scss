@@ -1,0 +1,117 @@
+@use "../abstracts/variables";
+@use "../abstracts/mixins";
+@use "../base/fonts";
+
+// main buttons style
+.button {
+  background-color: variables.$purple;
+  color: variables.$white;
+  font-family: fonts.$mainfamily;
+  font-weight: 700;
+  cursor: pointer;
+  text-align: center;
+  border: none;
+
+  &:hover {
+    background-color: variables.$darkpurple;
+  }
+
+  @media (320px <= width <= calc((variables.$bp-tablet) - 1px)) {
+    padding: 4px;
+    font-size: 10px;
+  }
+
+  @media (min-width: variables.$bp-tablet) {
+    padding: variables.$spacing10;
+    font-size: 12px;
+  }
+
+  @media (min-width: variables.$bp-laptop) {
+    padding: variables.$spacing18;
+    font-size: 18px;
+  }
+}
+
+// nav_button in homepage carousel
+.nav-button {
+  border: 2px solid variables.$black;
+
+  &:hover {
+    border-color: variables.$purple;
+  }
+
+  @media (min-width: variables.$bp-tablet) {
+    padding: variables.$spacing2 variables.$spacing4;
+  }
+
+  @media (min-width: variables.$bp-laptop) {
+    padding: variables.$spacing4 variables.$spacing18;
+  }
+}
+
+.nav-button-disabled {
+  cursor: auto;
+  border-color: variables.$textmain;
+  opacity: 0.5;
+}
+
+// catalog page pagination
+.catalog-pagination-nextbtn {
+  border: 1px solid variables.$purple;
+  display: flex;
+  align-items: center;
+  border-radius: 4px;
+  justify-self: end;
+  grid-column: 3;
+  background-color: transparent;
+
+  &:hover {
+    border: 3px solid variables.$purple;
+  }
+
+  h4 {
+    font-size: 11px;
+  }
+
+  @media (320px <= width <= calc((variables.$bp-tablet) - 1px)) {
+    padding: variables.$spacing6 variables.$spacing12;
+    height: variables.$spacing32;
+    width: variables.$spacing60;
+    gap: variables.$spacing8;
+  }
+
+  @media (min-width: variables.$bp-tablet) {
+    padding: variables.$spacing14 variables.$spacing20;
+    height: variables.$spacing40;
+    width: 88px;
+    gap: 13px;
+  }
+}
+
+// cart page
+.cart-main-table button.cart-increment {
+  border: none;
+  background-color: transparent;
+  text-align: center;
+
+  @media (min-width: variables.$bp-tablet) {
+    padding: variables.$spacing12;
+  }
+
+  @media (min-width: variables.$bp-laptop) {
+    padding: variables.$spacing18;
+  }
+}
+
+// modal logIn - password_forgetbtn
+.form button.modal-password-forgetbtn {
+  font-family: fonts.$mainfamily;
+  font-weight: 700;
+  font-size: 9px;
+  background-color: transparent;
+  color: variables.$purple;
+  min-width: 110px;
+  height: 20px;
+  border: none;
+  padding: 0;
+}

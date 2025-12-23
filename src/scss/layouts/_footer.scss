@@ -1,0 +1,226 @@
+@use "../base/fonts";
+@use "../base/reset";
+@use "../abstracts/mixins";
+@use "../abstracts/variables";
+
+.footer-benefits {
+  background-image: url("../assets/img/footer/bg.jpg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+
+  @media (320px <= width <= calc((variables.$bp-tablet) - 1px)) {
+    margin-bottom: 24px;
+  }
+
+  @media (min-width: variables.$bp-laptop) {
+    margin-bottom: 60px;
+  }
+
+  @media (min-width: variables.$bp-desktop) {
+    margin-bottom: 120px;
+  }
+}
+
+.footer-benefits-container {
+  box-sizing: border-box;
+
+  @media (320px <= width <= calc((variables.$bp-tablet) - 1px)) {
+    padding: 20px;
+  }
+
+  @media (min-width: variables.$bp-tablet) {
+    padding: 37px 0 40px;
+    height: 192px;
+  }
+}
+
+.footer-benefits-list {
+  display: flex;
+  justify-content: space-between;
+
+  @media (320px <= width <= calc((variables.$bp-tablet) - 1px)) {
+    flex-wrap: wrap;
+    margin-top: 14px;
+  }
+
+  @media (min-width: variables.$bp-tablet) {
+    flex-wrap: nowrap;
+    margin-top: 32px;
+  }
+}
+
+.footer-benefits-item {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  max-width: 258px;
+
+  @media (320px <= width <= calc((variables.$bp-tablet) - 1px)) {
+    line-height: 0.9em;
+  }
+
+  @media (min-width: variables.$bp-tablet) {
+    line-height: 1.7em;
+  }
+}
+
+.footer-benefits-item-img {
+  @media (320px <= width <= calc((variables.$bp-tablet) - 1px)) {
+    width: 30px;
+    height: 30px;
+  }
+
+  @media (min-width: variables.$bp-tablet) {
+    width: 60px;
+    height: 60px;
+  }
+}
+
+.footer-info {
+  display: flex;
+  justify-content: space-between;
+
+  @media (320px <= width <= calc((variables.$bp-tablet) - 1px)) {
+    flex-direction: column;
+  }
+
+  @media (min-width: variables.$bp-tablet) {
+    margin-top: 30px;
+    flex-direction: row;
+  }
+
+  @media (min-width: variables.$bp-laptop) {
+    margin-top: 120px;
+  }
+}
+
+.footer-about {
+  display: flex;
+  flex-direction: column;
+
+  @media (min-width: variables.$bp-tablet) {
+    width: 300px;
+    gap: 16px;
+  }
+
+  @media (min-width: variables.$bp-laptop) {
+    width: 400px;
+    gap: 30px;
+  }
+
+  @media (min-width: variables.$bp-desktop) {
+    width: 640px;
+    gap: 50px;
+  }
+}
+
+.footer-about-mainlist {
+  display: flex;
+  justify-content: space-between;
+}
+
+.footer-about-mainitem {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.footer-about-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.footer-about-text-wide,
+.footer-about-shipping p,
+.footer-contacts-list {
+  line-height: 1.7em;
+}
+
+.footer-about-shipping {
+  display: flex;
+  flex-direction: column;
+
+  @media (320px <= width <= calc((variables.$bp-tablet) - 1px)) {
+    margin-top: 24px;
+    gap: 16px;
+  }
+
+  @media (min-width: variables.$bp-tablet) {
+    gap: 24px;
+  }
+}
+
+.footer-contacts {
+  display: flex;
+  flex-direction: column;
+
+  @media (320px <= width <= calc((variables.$bp-tablet) - 1px)) {
+    width: 100%;
+    margin-top: 24px;
+  }
+
+  @media (min-width: variables.$bp-tablet) {
+    width: 374px;
+  }
+}
+
+.footer-contacts h4,
+.footer-contacts a {
+  @media (320px <= width <= calc((variables.$bp-tablet) - 1px)) {
+    margin-bottom: 12px;
+  }
+
+  @media (min-width: variables.$bp-tablet) {
+    margin-bottom: 24px;
+  }
+}
+
+.footer-contacts-list {
+  display: grid;
+  grid-template-rows: 1fr 2fr;
+
+  @media (320px <= width <= calc((variables.$bp-tablet) - 1px)) {
+    margin-top: 18px;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px 16px;
+    line-height: 0.9em;
+  }
+
+  @media (min-width: variables.$bp-tablet) {
+    margin-top: 30px;
+    grid-template-columns: 146px 120px;
+    gap: 24px 18px;
+    line-height: 1.7em;
+  }
+
+  @media (min-width: variables.$bp-laptop) {
+    margin-top: 73px;
+    grid-template-columns: 196px 160px;
+    gap: 32px 24px;
+  }
+}
+
+.footer-contacts-item {
+  display: flex;
+  gap: 14px;
+}
+
+.footer-contacts-icon {
+  @media (320px <= width <= calc((variables.$bp-tablet) - 1px)) {
+    width: 18px;
+  }
+}
+
+p.footer-copyright-text {
+  text-align: center;
+
+  @media (min-width: variables.$bp-tablet) {
+    margin-top: 40px;
+  }
+
+  @media (min-width: variables.$bp-laptop) {
+    margin-top: 110px;
+  }
+}

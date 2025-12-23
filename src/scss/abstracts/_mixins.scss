@@ -1,0 +1,53 @@
+@use "./variables";
+
+// make 2 layers background image - image (with retina) + color layer(shadow effect)
+@mixin shadow-img($class-name, $img-path) {
+  /* parent element conditions */
+  .#{$class-name} {
+    position: relative;
+    z-index: 0;
+    overflow: hidden;
+  }
+
+  /* background image with retina */
+  .#{$class-name}:before {
+    content: " ";
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url("#{$img-path}1x.jpg");
+
+    @media (min-resolution >= 2dppx) {
+      background-image: url("#{$img-path}2x.jpg");
+    }
+
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    z-index: -3;
+  }
+
+  /* semi-transparent overlay */
+  .#{$class-name}::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: variables.$bg-chief;
+    z-index: -1;
+  }
+}
+
+// calc container width for different device width
+@mixin container-width($breakpoint, $padding) {
+  @media (min-width: $breakpoint) {
+    .container {
+      max-width: calc(#{$breakpoint} - #{$padding});
+    }
+  }
+}

@@ -1,0 +1,341 @@
+@use "../base/fonts";
+@use "../base/reset";
+@use "../abstracts/mixins";
+@use "../abstracts/variables";
+
+// hero section
+@include mixins.shadow-img(about-hero, "../assets/img/about_page/bg_hero");
+
+.about-hero-box {
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  text-align: center;
+
+  @media (320px <= width <= calc((variables.$bp-tablet) - 1px)) {
+    width: 300px;
+    padding-top: 60px;
+    padding-bottom: 60px;
+  }
+
+  @media (min-width: variables.$bp-tablet) {
+    width: 426px;
+    padding-top: 111px;
+    padding-bottom: 113px;
+  }
+
+  @media (min-width: variables.$bp-laptop) {
+    padding-top: 211px;
+    padding-bottom: 213px;
+  }
+}
+
+.about-hero-header {
+  color: variables.$white;
+
+  @media (min-width: variables.$bp-tablet) {
+    font-size: 24px;
+  }
+
+  @media (min-width: variables.$bp-laptop) {
+    font-size: 50px;
+  }
+}
+
+.about-hero-text {
+  color: variables.$textminor;
+}
+
+// awards section
+.about-awards-list {
+  display: flex;
+  justify-content: space-between;
+
+  @media (320px <= width <= calc((variables.$bp-tablet) - 1px)) {
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  @media (min-width: variables.$bp-tablet) {
+    flex-direction: row;
+  }
+}
+
+.about-awards-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  @media (320px <= width <= calc((variables.$bp-tablet) - 1px)) {
+    gap: 10px;
+  }
+
+  @media (min-width: variables.$bp-tablet) {
+    gap: 22px;
+  }
+}
+
+.about-awards-img {
+  @media (320px <= width <= calc((variables.$bp-tablet) - 1px)) {
+    width: 28px;
+  }
+
+  @media (min-width: variables.$bp-tablet) {
+    width: 32px;
+  }
+
+  @media (min-width: variables.$bp-laptop) {
+    width: 48px;
+  }
+
+  @media (min-width: variables.$bp-desktop) {
+    width: 62px;
+  }
+}
+
+.about-awards-header {
+  @media (320px <= width <= calc((variables.$bp-tablet) - 1px)) {
+    font-size: 14px;
+  }
+
+  @media (min-width: variables.$bp-tablet) {
+    font-size: 16px;
+  }
+
+  @media (min-width: variables.$bp-laptop) {
+    font-size: 18px;
+  }
+
+  @media (min-width: variables.$bp-desktop) {
+    font-size: 20px;
+  }
+}
+
+.about-awards-text {
+  color: variables.$black;
+  text-align: center;
+
+  @media (min-width: variables.$bp-tablet) {
+    max-width: 150px;
+    line-height: 1.2em;
+  }
+
+  @media (min-width: variables.$bp-laptop) {
+    max-width: 218px;
+    line-height: 1.8em;
+  }
+
+  @media (min-width: variables.$bp-desktop) {
+    max-width: 258px;
+  }
+}
+
+// section new arrivals
+.about-newarrivals-box {
+  display: flex;
+
+  @media (320px <= width <= calc((variables.$bp-tablet) - 1px)) {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+
+  @media (min-width: variables.$bp-tablet) {
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+  }
+
+  @media (min-width: variables.$bp-laptop) {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+
+.about-newarrivals-main {
+  display: flex;
+  flex-direction: column;
+
+  @media (320px <= width <= calc((variables.$bp-tablet) - 1px)) {
+    align-items: center;
+    text-align: center;
+    gap: 20px;
+  }
+
+  @media (min-width: variables.$bp-tablet) {
+    align-items: center;
+    text-align: center;
+    gap: 24px;
+  }
+
+  @media (min-width: variables.$bp-laptop) {
+    text-align: start;
+    align-items: start;
+    max-width: 442px;
+    justify-content: space-between;
+  }
+
+  @media (min-width: variables.$bp-desktop) {
+    max-width: 642px;
+    gap: 30px;
+  }
+
+  a {
+    @media (min-width: variables.$bp-tablet) {
+      width: 160px;
+    }
+
+    @media (min-width: variables.$bp-laptop) {
+      width: 200px;
+    }
+  }
+}
+
+.about-newarrivals-img {
+  @media (min-width: variables.$bp-tablet) {
+    width: 400px;
+  }
+
+  @media (min-width: variables.$bp-laptop) {
+    width: 500px;
+  }
+
+  @media (min-width: variables.$bp-desktop) {
+    width: 615px;
+  }
+}
+
+// section our team
+.about-our-team-mainbox {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  @media (320px <= width <= calc((variables.$bp-tablet) - 1px)) {
+    gap: 24px;
+  }
+
+  @media (min-width: variables.$bp-tablet) {
+    gap: 60px;
+  }
+}
+
+.about-our-team-mainbox h2 {
+  position: relative;
+
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: -10px;
+    right: 0;
+    width: 100%;
+    border: 1px solid variables.$purple;
+  }
+}
+
+.about-our-team-list {
+  display: flex;
+
+  @media (320px <= width <= calc((variables.$bp-tablet) - 1px)) {
+    gap: 18px;
+  }
+
+  @media (min-width: variables.$bp-tablet) {
+    gap: 35px;
+  }
+}
+
+.about-our-team-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  @media (320px <= width <= calc((variables.$bp-tablet) - 1px)) {
+    gap: 16px;
+    text-align: center;
+  }
+
+  @media (min-width: variables.$bp-tablet) {
+    gap: 27px;
+  }
+}
+
+.about-our-team-name {
+  @media (320px <= width <= calc((variables.$bp-tablet) - 1px)) {
+    font-size: 14px;
+  }
+
+  @media (min-width: variables.$bp-tablet) {
+    font-size: 16px;
+  }
+
+  @media (min-width: variables.$bp-laptop) {
+    font-size: 22px;
+  }
+}
+
+.about-our-team-role {
+  color: variables.$black;
+}
+
+// --------------------------contact us page
+@include mixins.shadow-img(
+  contact-us-hero,
+  "../assets/img/contact_us_page/bg_hero"
+);
+
+.about-newarrivals-minor.contact-us {
+  @media (320px <= width <= calc((variables.$bp-tablet) - 1px)) {
+    width: 300px;
+  }
+
+  @media (min-width: variables.$bp-tablet) {
+    width: 360px;
+  }
+
+  @media (min-width: variables.$bp-laptop) {
+    width: 480px;
+    height: 692px;
+  }
+
+  @media (min-width: variables.$bp-desktop) {
+    width: 627px;
+    height: 720px;
+  }
+
+  .contact-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+}
+
+.contact-form-box-header {
+  @media (min-width: variables.$bp-tablet) {
+    font-size: 14px;
+    margin-bottom: 14px;
+  }
+
+  @media (min-width: variables.$bp-laptop) {
+    font-size: 18px;
+    margin-bottom: 24px;
+  }
+
+  @media (min-width: variables.$bp-desktop) {
+    font-size: 25px;
+    margin-bottom: 34px;
+  }
+}
+
+.contact-form-box-text {
+  @media (min-width: variables.$bp-tablet) {
+    margin-bottom: 24px;
+  }
+
+  @media (min-width: variables.$bp-laptop) {
+    margin-bottom: 70px;
+  }
+}

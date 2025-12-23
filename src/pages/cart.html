@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="icon"
+      type="image/svg+xml"
+      href="../assets/img/icons/favicon.svg"
+    />
+    <link rel="stylesheet" href="../dist/main.css" />
+
+    <title>BEST SHOP</title>
+  </head>
+  <body>
+    <header class="header" id="header"></header>
+
+    <main>
+      <section class="cart-hero section">
+        <div class="container">
+          <div class="about-hero-box">
+            <p class="header-logo-text about-hero-header">My Cart</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="cart section">
+        <div class="container">
+          <div class="cart-wrapper">
+            <table id="cart-main-table" class="cart-main-table">
+              <thead class="cart-table-head">
+                <tr>
+                  <th>IMAGE</th>
+                  <th>PRODUCT NAME</th>
+                  <th>PRICE</th>
+                  <th>QUANTITY</th>
+                  <th>TOTAL</th>
+                  <th>DELETE</th>
+                </tr>
+              </thead>
+              <tbody id="cart-main-table-body"></tbody>
+            </table>
+
+            <div class="cart-minor-wrapper">
+              <ul class="cart-button-wrapper">
+                <li>
+                  <a class="button" href="./catalog.html">CONTINUE SHOPPING</a>
+                </li>
+                <li>
+                  <button id="cart-clear" class="button" type="button">
+                    CLEAR SHOPPING CART
+                  </button>
+                </li>
+              </ul>
+              <div id="cart-total-table-box" class="cart-total-table-box">
+                <table
+                  id="cart-total-table"
+                  class="header-nav-text cart-total-table"
+                ></table>
+                <button id="cart-checkout" class="button" type="button">
+                  CHECKOUT
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="section" id="footer"></footer>
+
+    <script type="module" src="../js/cartpage.js"></script>
+  </body>
+</html>

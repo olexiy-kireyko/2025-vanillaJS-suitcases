@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="icon"
+      type="image/svg+xml"
+      href="../assets/img/icons/favicon.svg"
+    />
+    <link rel="stylesheet" href="../dist/main.css" />
+
+    <title>BEST SHOP</title>
+  </head>
+  <body>
+    <header class="header" id="header"></header>
+
+    <main>
+      <section id="product-section" class="section"></section>
+
+      <section class="product-details">
+        <div class="container">
+          <ul class="product-details-subsection-list">
+            <li>
+              <button
+                id="product-details-btn"
+                class="header-nav-text product-details-subsection-item active"
+              >
+                DETAILS
+              </button>
+            </li>
+            <li>
+              <button
+                id="product-reviews-btn"
+                class="header-nav-text product-details-subsection-item"
+              >
+                REVIEWS
+              </button>
+            </li>
+            <li>
+              <button
+                id="product-shiping-btn"
+                class="header-nav-text product-details-subsection-item"
+              >
+                SHIPPING POLICY
+              </button>
+            </li>
+          </ul>
+          <div id="product-details-subsection-box">
+            <ul
+              id="product-subsection-details"
+              class="text-main product-details-subsection-details"
+            >
+              <li>
+                <p>
+                  Vestibulum commodo sapien non elit porttitor, vitae volutpat
+                  nibh mollis. Nulla porta risus id neque tempor, in efficitur
+                  justo imperdiet. Etiam a ex at ante tincidunt imperdiet. Nunc
+                  congue ex vel nisl viverra, sit amet aliquet lectus
+                  ullamcorper. Praesent luctus lacus non lorem elementum, eu
+                  tristique sapien suscipit. Sed bibendum, ipsum nec viverra
+                  malesuada, erat nisi sodales purus, eget hendrerit dui ligula
+                  eu enim. Ut non est nisi. Pellentesque tristique pretium dolor
+                  eu commodo. Proin iaculis nibh vitae lectus mollis bibendum.
+                  Quisque varius eget urna sit amet luctus. Suspendisse potenti.
+                  Curabitur ac placerat est, sit amet sodales risus.
+                  Pellentesque viverra dui auctor, ullamcorper turpis pharetra,
+                  facilisis quam.
+                </p>
+              </li>
+              <li>
+                <p>
+                  Proin iaculis nibh vitae lectus mollis bibendum. Quisque
+                  varius eget urna sit amet luctus. Suspendisse potenti.
+                  Curabitur ac placerat est, sit amet sodales risus.
+                  Pellentesque viverra dui auctor, ullamcorper turpis pharetra,
+                  facilisis quam. Proin iaculis nibh vitae lectus mollis
+                  bibendum.
+                </p>
+              </li>
+              <li>
+                <p>
+                  Quisque varius eget urna sit amet luctus. Suspendisse potenti.
+                  Curabitur ac placerat est, sit amet sodales risus.
+                  Pellentesque viverra dui auctor, ullamcorper turpis pharetra,
+                  facilisis quam.
+                </p>
+              </li>
+            </ul>
+
+            <div
+              id="product-subsection-reviews"
+              class="product-details-subsection-reviews hidden"
+            >
+              <div>
+                <p
+                  id="product-details-exist-header"
+                  class="header-nav-text product-details-exist-header"
+                ></p>
+                <div class="product-reviews-exist">
+                  <img
+                    class="product-reviews-exist-img"
+                    src="../assets/img/product_details_page/customer.png"
+                    alt="customer"
+                  />
+
+                  <div>
+                    <div class="product-reviews-exist-info">
+                      <p class="text-main">
+                        Ella Harper <span>/ June 11, 2025</span>
+                      </p>
+                      <ul id="product-reviews-stars"></ul>
+                    </div>
+                    <p class="text-main product-reviews-exist-text">
+                      Proin iaculis nibh vitae lectus mollis bibendum. Quisque
+                      varius eget urna sit amet luctus. Suspendisse potenti
+                      curabitur ac placerat est, sit amet sodales risus.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div>
+                <p class="header-nav-text product-details-reviews-header">
+                  Add Review
+                </p>
+                <p class="text-main product-details-reviews-text">
+                  Your email address wont be shared with anybody. Required
+                  fields have the symbol *
+                </p>
+                <div class="product-details-reviews-rate header-nav-text">
+                  <p>RATE PRODUCT</p>
+                  <ul id="product-add-reviews-stars">
+                    <li>
+                      <img
+                        src="../assets/img/icons/product_details_page/star-edge.svg"
+                        alt="star-empty"
+                      />
+                    </li>
+                    <li>
+                      <img
+                        src="../assets/img/icons/product_details_page/star-edge.svg"
+                        alt="star-empty"
+                      />
+                    </li>
+                    <li>
+                      <img
+                        src="../assets/img/icons/product_details_page/star-edge.svg"
+                        alt="star-empty"
+                      />
+                    </li>
+                    <li>
+                      <img
+                        src="../assets/img/icons/product_details_page/star-edge.svg"
+                        alt="star-empty"
+                      />
+                    </li>
+                    <li>
+                      <img
+                        src="../assets/img/icons/product_details_page/star-edge.svg"
+                        alt="star-empty"
+                      />
+                    </li>
+                  </ul>
+                </div>
+
+                <form
+                  id="review-form"
+                  class="review-form"
+                  action=""
+                  enctype="text/plain"
+                >
+                  <div class="review-form-user-message-wrapper">
+                    <label
+                      for="user-message"
+                      id="user-message-label"
+                      class="text-main error-user-message"
+                      >Your Review<span>*</span></label
+                    ><textarea
+                      name="user-message"
+                      id="user-message"
+                      required
+                    ></textarea>
+                  </div>
+
+                  <div class="review-form-userinfo-wrapper">
+                    <div class="review-form-username-wrapper">
+                      <label
+                        for="user-name"
+                        id="user-name-label"
+                        class="text-main error-user-name"
+                        >Your Name<span>*</span></label
+                      ><input
+                        name="user-name"
+                        id="user-name"
+                        type="text"
+                        required
+                      />
+                    </div>
+
+                    <div class="review-form-useremail-wrapper">
+                      <label
+                        for="user-email"
+                        id="user-email-label"
+                        class="text-main error-user-email"
+                        >Your Email<span>*</span></label
+                      ><input
+                        name="user-email"
+                        type="email"
+                        id="user-email"
+                        required
+                      />
+                    </div>
+                  </div>
+
+                  <label
+                    for="user-is-save-data"
+                    id="user-is-save-data-label"
+                    class="text-main user-is-save-data-label"
+                  >
+                    <input
+                      type="checkbox"
+                      name="user-is-save-data"
+                      id="user-is-save-data"
+                    />
+                    <div class="user-is-save-data-custombox">
+                      <img
+                        class="user-is-save-data-icon"
+                        src="../assets/img/product_details_page/check-mark.png"
+                        alt="check save info"
+                        width="16"
+                        height="16"
+                      />
+                    </div>
+                    Save my name, email, and website in this browser for when I
+                    leave another comment.
+                  </label>
+
+                  <button class="button" type="submit">SUBMIT</button>
+                </form>
+              </div>
+            </div>
+
+            <ul
+              id="product-subsection-shipping"
+              class="text-main product-details-subsection-details hidden"
+            >
+              <li>
+                <p>
+                  Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sunt
+                  quae aperiam consequatur ad id deleniti iusto nulla quia
+                  quaerat modi rerum odit vel illo nemo, amet ex in quibusdam
+                  voluptatibus.
+                </p>
+              </li>
+              <li>
+                <p>
+                  Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                  Iusto reprehenderit quae totam quo assumenda recusandae modi
+                  et voluptas ea. Totam maiores corrupti distinctio fugit
+                  consectetur autem cupiditate quibusdam, veritatis perferendis.
+                  Proin iaculis nibh vitae lectus mollis bibendum. Quisque
+                  varius eget urna sit amet luctus. Suspendisse potenti.
+                  Curabitur ac placerat est, sit amet sodales risus.
+                  Pellentesque viverra dui auctor, ullamcorper turpis pharetra,
+                  facilisis quam. Proin iaculis nibh vitae lectus mollis
+                  bibendum.
+                </p>
+              </li>
+              <li>
+                <p>
+                  Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                  Debitis culpa porro, corrupti doloremque dolor magni laborum
+                  alias non et in maxime iusto blanditiis nemo nobis? Illo
+                  necessitatibus praesentium eligendi nam! Quisque varius eget
+                  urna sit amet luctus. Suspendisse potenti. Curabitur ac
+                  placerat est, sit amet sodales risus.
+                </p>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="product-also-like">
+        <div class="container">
+          <div class="product-also-like-wrapper">
+            <div class="header-logo-text product-also-like-header">
+              You May Also Like
+            </div>
+            <ul id="product-also-like-list" class="product-also-like-list"></ul>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="section" id="footer"></footer>
+
+    <script type="module" src="../js/product_detailspage.js"></script>
+  </body>
+</html>

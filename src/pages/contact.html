@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="icon"
+      type="image/svg+xml"
+      href="../assets/img/icons/favicon.svg"
+    />
+    <link rel="stylesheet" href="../dist/main.css" />
+
+    <title>BEST SHOP</title>
+  </head>
+  <body>
+    <header class="header" id="header"></header>
+
+    <main>
+      <section class="contact-us-hero section">
+        <div class="container">
+          <div class="about-hero-box">
+            <p class="header-logo-text about-hero-header">Contact Us</p>
+            <p class="text-main about-hero-text">
+              Duis vestibulum elit vel neque pharetra vulputate. Duis rutrum non
+              risus in imperdiet.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="about-awards section">
+        <div class="container">
+          <ul class="about-awards-list">
+            <li class="about-awards-item">
+              <img
+                class="about-awards-img"
+                src="../assets/img/icons/contact_us_page/location.svg"
+                alt="super"
+              />
+              <p class="header-nav-text about-awards-header">Our Location</p>
+              <p class="text-main about-awards-text">
+                1234 NW Bobcat Lane, St. Robert, MO 65584-5678
+              </p>
+            </li>
+
+            <li class="about-awards-item">
+              <img
+                class="about-awards-img"
+                src="../assets/img/icons/contact_us_page/time.svg"
+                alt="super"
+              />
+              <p class="header-nav-text about-awards-header">Operating Time</p>
+              <p class="text-main about-awards-text">
+                Monday - Friday: 9am - 6 pm Weekends: 10:30 am - 6pm
+              </p>
+            </li>
+
+            <li class="about-awards-item">
+              <img
+                class="about-awards-img"
+                src="../assets/img/icons/contact_us_page/email.svg"
+                alt="super"
+              />
+              <p class="header-nav-text about-awards-header">Our Email</p>
+              <p class="text-main about-awards-text">
+                best@shop.com info@bestshop.com
+              </p>
+            </li>
+
+            <li class="about-awards-item">
+              <img
+                class="about-awards-img"
+                src="../assets/img/icons/contact_us_page/phone.svg"
+                alt="super"
+              />
+              <p class="header-nav-text about-awards-header">Call Us</p>
+              <p class="text-main about-awards-text">
+                (268)142-8413 <br />
+                (760)265-2917
+              </p>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="about-newarrivals section">
+        <div class="container">
+          <div class="about-newarrivals-box">
+            <div class="about-newarrivals-minor contact-us">
+              <img
+                class="contact-img"
+                src="../assets/img/contact_us_page/form2x.jpg"
+                alt="new-arrivals"
+                srcset="
+                  ../assets/img/contact_us_page/form1x.jpg 1x,
+                  ../assets/img/contact_us_page/form2x.jpg 2x
+                "
+              />
+            </div>
+            <div class="contact-form-box">
+              <p class="header-nav-text contact-form-box-header">
+                Your Feedback Is Much Appreciated!
+              </p>
+              <p class="text-main contact-form-box-text">
+                We will contact you when you complete the following form!
+              </p>
+
+              <form
+                id="contact-form"
+                class="form"
+                action=""
+                enctype="text/plain"
+              >
+                <label
+                  for="user-name"
+                  id="user-name-label"
+                  class="header-nav-text error-user-name"
+                  >Your Name <span>*</span></label
+                ><input name="user-name" id="user-name" type="text" required />
+
+                <label
+                  for="user-email"
+                  id="user-email-label"
+                  class="header-nav-text error-user-email"
+                  >Your Email Address <span>*</span></label
+                ><input
+                  name="user-email"
+                  type="email"
+                  name=""
+                  id="user-email"
+                  required
+                />
+
+                <label
+                  for="user-topic"
+                  id="user-topic-label"
+                  class="header-nav-text error-user-topic"
+                  >Topic <span>*</span></label
+                ><input
+                  name="user-topic"
+                  type="text"
+                  id="user-topic"
+                  required
+                />
+
+                <label
+                  for="user-message"
+                  id="user-message-label"
+                  class="header-nav-text error-user-message"
+                  >Your Message <span>*</span></label
+                ><textarea
+                  name="user-message"
+                  id="user-message"
+                  required
+                ></textarea>
+                <button class="button" type="submit">SEND</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="section" id="footer"></footer>
+
+    <script type="module" src="../js/contactpage.js"></script>
+  </body>
+</html>

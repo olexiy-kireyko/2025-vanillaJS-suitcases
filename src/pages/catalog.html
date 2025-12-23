@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="icon"
+      type="image/svg+xml"
+      href="../assets/img/icons/favicon.svg"
+    />
+    <link rel="stylesheet" href="../dist/main.css" />
+
+    <title>BEST SHOP</title>
+  </head>
+  <body>
+    <header class="header" id="header"></header>
+
+    <main>
+      <section class="section">
+        <div class="container">
+          <div class="catalog-filters-box">
+            <div
+              id="catalog-category-wrapper"
+              data-filter="category"
+              class="catalog-filters-wrapper text-main"
+            >
+              <div class="catalog-filters-label">Choose the category</div>
+              <ul class="catalog-filters" id="catalog-category-select">
+                <li data-filter-value="carry-ons">carry-ons</li>
+                <li data-filter-value="suitcases">suitcases</li>
+                <li data-filter-value="luggage sets">luggage sets</li>
+                <li data-filter-value="kids' luggage">kids' luggage</li>
+              </ul>
+              <img
+                class="catalog-filters-arrow"
+                src="../assets/img/icons/arrow-sort.svg"
+                alt="arrow-sort"
+              />
+            </div>
+
+            <div
+              id="catalog-color-wrapper"
+              data-filter="color"
+              class="catalog-filters-wrapper text-main"
+            >
+              <div class="catalog-filters-label">Choose the color</div>
+              <ul
+                class="catalog-filters"
+                name="color"
+                id="catalog-color-select"
+              >
+                <li data-filter-value="red">red</li>
+                <li data-filter-value="blue">blue</li>
+                <li data-filter-value="green">green</li>
+                <li data-filter-value="black">black</li>
+                <li data-filter-value="grey">grey</li>
+                <li data-filter-value="yellow">yellow</li>
+                <li data-filter-value="pink">pink</li>
+              </ul>
+              <img
+                class="catalog-filters-arrow"
+                src="../assets/img/icons/arrow-sort.svg"
+                alt="arrow-sort"
+              />
+            </div>
+
+            <div
+              id="catalog-size-wrapper"
+              data-filter="size"
+              class="catalog-filters-wrapper text-main"
+            >
+              <div class="catalog-filters-label">Choose the size</div>
+              <ul class="catalog-filters" id="catalog-size-select">
+                <li data-filter-value="S">S</li>
+                <li data-filter-value="M">M</li>
+                <li data-filter-value="L">L</li>
+                <li data-filter-value="XL">XL</li>
+                <li data-filter-value="S-L">S-L</li>
+                <li data-filter-value="S, M, XL">S, M, XL</li>
+              </ul>
+              <img
+                class="catalog-filters-arrow"
+                src="../assets/img/icons/arrow-sort.svg"
+                alt="arrow-sort"
+              />
+            </div>
+
+            <div
+              id="catalog-salesStatus-wrapper"
+              data-filter="salesStatus"
+              class="catalog-filters-wrapper text-main"
+            >
+              <div class="catalog-filters-label">Choose the salesStatus</div>
+              <ul class="catalog-filters" id="catalog-salesStatus-select">
+                <li data-filter-value="true">true</li>
+                <li data-filter-value="false">false</li>
+              </ul>
+              <img
+                class="catalog-filters-arrow"
+                src="../assets/img/icons/arrow-sort.svg"
+                alt="arrow-sort"
+              />
+            </div>
+
+            <button
+              id="catalog-filters-reset"
+              class="button catalog-filters-reset"
+            >
+              RESET filters
+            </button>
+          </div>
+
+          <div class="catalog-wrapper">
+            <div class="catalog-main-container">
+              <div class="catalog-sort-box">
+                <p id="amount-of-products" class="text-main">
+                  Showing 1-12 Of 12 Results
+                </p>
+
+                <div
+                  id="catalog-sortOrder-wrapper"
+                  data-filter="sortOrder"
+                  class="catalog-filters-wrapper text-main"
+                >
+                  <div class="catalog-filters-label catalog-sortOrder-label">
+                    Default Sorting
+                  </div>
+                  <ul class="catalog-filters" id="catalog-sortOrder">
+                    <li data-filter-value="fromLowestPrice">fromLowestPrice</li>
+                    <li data-filter-value="fromHighestPrice">
+                      fromHighestPrice
+                    </li>
+                    <li data-filter-value="fromMostPopular">fromMostPopular</li>
+                    <li data-filter-value="fromHighestRating">
+                      fromHighestRating
+                    </li>
+                  </ul>
+                  <img
+                    class="catalog-filters-arrow"
+                    src="../assets/img/icons/arrow-sort.svg"
+                    alt="arrow-sort"
+                  />
+                </div>
+              </div>
+              <ul id="catalog"></ul>
+
+              <div id="catalog-pagination-box" class="catalog-pagination-box">
+                <button
+                  id="prev-page"
+                  class="catalog-pagination-nextbtn hidden"
+                >
+                  <img
+                    class="catalog-pagination-nextbtn-arrow"
+                    src="../assets/img/icons/arrow-next.svg"
+                    alt="arrow-next"
+                  />
+                  <h4>PREV</h4>
+                </button>
+
+                <ul
+                  id="catalog-pagination-page-list"
+                  class="catalog-pagination-page-list footer-benefits-text"
+                ></ul>
+
+                <button
+                  id="next-page"
+                  class="catalog-pagination-nextbtn hidden"
+                >
+                  <h4>NEXT</h4>
+                  <img
+                    class="catalog-pagination-nextbtn-arrow"
+                    src="../assets/img/icons/arrow-next.svg"
+                    alt="arrow-next"
+                  />
+                </button>
+              </div>
+            </div>
+
+            <div class="catalog-minor-container">
+              <div class="catalog-serch-box">
+                <input
+                  id="catalog-search-input"
+                  class="catalog-filters-label text-main catalog-serch-box-input"
+                  type="text"
+                /><button class="catalog-search-btn" id="catalog-search-btn">
+                  <img src="../assets/img/icons/search.svg" alt="search" />
+                </button>
+              </div>
+
+              <div class="catalog-topbest">
+                <p class="header-nav-text">Top Best Sets</p>
+                <ul id="catalog-topbest-list" class="catalog-topbest-list"></ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="section" id="footer"></footer>
+
+    <script type="module" src="../js/catalogpage.js"></script>
+  </body>
+</html>

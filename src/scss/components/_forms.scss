@@ -1,0 +1,383 @@
+@use "../base/fonts";
+@use "../base/reset";
+@use "../abstracts/mixins";
+@use "../abstracts/variables";
+
+// contact us form
+.form {
+  display: flex;
+  flex-direction: column;
+
+  label {
+    margin-bottom: variables.$spacing8;
+    position: relative;
+  }
+
+  label > span {
+    color: variables.$purple;
+  }
+
+  input,
+  textarea {
+    box-sizing: border-box;
+    padding-left: variables.$spacing12;
+    border: 1px solid variables.$purple;
+
+    @media (320px <= width <= calc((variables.$bp-tablet) - 1px)) {
+      min-height: 34px;
+    }
+
+    @media (min-width: variables.$bp-tablet) {
+      margin-bottom: 20px;
+      min-height: 34px;
+    }
+
+    @media (min-width: variables.$bp-laptop) {
+      margin-bottom: variables.$spacing40;
+      min-height: 44px;
+    }
+  }
+
+  textarea {
+    min-height: 117px;
+    padding-top: variables.$spacing12;
+  }
+
+  button {
+    width: 90px;
+    height: variables.$spacing40;
+    padding: 13px 28px;
+    font-weight: 700;
+    font-family: fonts.$secondfamily;
+    font-size: 12px;
+    color: variables.$white;
+
+    @media (320px <= width <= calc((variables.$bp-tablet) - 1px)) {
+      margin-top: variables.$spacing18;
+    }
+
+    @media (min-width: variables.$bp-tablet) {
+      margin-top: 0;
+    }
+  }
+}
+
+.error-value::before {
+  content: "";
+  height: 30px;
+  position: absolute;
+  border: variables.$spacing2 solid variables.$purple;
+  border-radius: 4px;
+  border-bottom-left-radius: 0;
+  background-color: variables.$lightpurple;
+  top: -10px;
+  left: 0;
+  z-index: 10;
+  padding: 4px 0 0;
+  text-align: center;
+
+  @media (320px <= width <= calc((variables.$bp-tablet) - 1px)) {
+    width: 300px;
+  }
+
+  @media (min-width: variables.$bp-tablet) {
+    width: 400px;
+  }
+}
+
+.error-value.error-user-name::before {
+  content: 'Please input a valid name (e.g. "Aaa")';
+}
+
+.error-value.error-user-email::before {
+  content: "Please input a valid email";
+}
+
+.error-value.error-user-topic::before {
+  content: "Please input from 3 to 30 symbols";
+}
+
+.error-value.error-user-message::before {
+  content: "Please input from 10 to 300 symbols";
+}
+
+// product card component form
+.product-card {
+  .product-card-info-selectlist {
+    display: flex;
+    flex-direction: column;
+
+    @media (min-width: variables.$bp-laptop) {
+      gap: variables.$spacing18;
+      margin-bottom: variables.$spacing32;
+    }
+
+    @media (min-width: variables.$bp-desktop) {
+      gap: 30px;
+      margin-bottom: 80px;
+    }
+  }
+
+  .product-card-info-selectitem .catalog-filters-wrapper {
+    @media (min-width: variables.$bp-laptop) {
+      width: 440px;
+    }
+
+    @media (min-width: variables.$bp-desktop) {
+      width: 612px;
+    }
+  }
+
+  .product-card-info-selectitem-header {
+    color: variables.$textmain;
+
+    @media (min-width: variables.$bp-tablet) {
+      font-size: 12px;
+      margin-bottom: 6px;
+    }
+
+    @media (min-width: variables.$bp-laptop) {
+      font-size: 17px;
+      margin-bottom: 13px;
+    }
+  }
+}
+
+// product details page - add new review form
+.review-form-user-message-wrapper,
+.review-form-userinfo-wrapper,
+.review-form-useremail-wrapper {
+  position: relative;
+}
+
+.review-form {
+  margin-top: 29px;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+
+  label {
+    z-index: 10;
+    pointer-events: none;
+    position: absolute;
+    top: variables.$spacing12;
+    left: 15px;
+    font-size: 13px;
+    color: variables.$stroke-header;
+  }
+
+  label > span {
+    color: variables.$purple;
+  }
+
+  input,
+  textarea {
+    box-sizing: border-box;
+    padding: 15px;
+    position: relative;
+    border: 2px solid variables.$purple-half-opacity;
+  }
+
+  textarea {
+    min-height: 170px;
+    resize: none;
+
+    @media (320px <= width <= calc((variables.$bp-tablet) - 1px)) {
+      width: 300px;
+    }
+
+    @media (min-width: variables.$bp-tablet) {
+      min-width: 360px;
+    }
+
+    @media (min-width: variables.$bp-laptop) {
+      min-width: 460px;
+    }
+
+    @media (min-width: variables.$bp-desktop) {
+      min-width: 606px;
+    }
+  }
+
+  input {
+    height: variables.$spacing40;
+
+    @media (320px <= width <= calc((variables.$bp-tablet) - 1px)) {
+      width: 300px;
+    }
+
+    @media (min-width: variables.$bp-tablet) {
+      width: 180px;
+    }
+
+    @media (min-width: variables.$bp-laptop) {
+      width: 200px;
+    }
+
+    @media (min-width: variables.$bp-desktop) {
+      width: 290px;
+    }
+  }
+
+  .error-value::before {
+    content: "";
+    position: absolute;
+    border: variables.$spacing2 solid variables.$purple;
+    border-radius: 4px;
+    border-bottom-left-radius: 0;
+    background-color: variables.$lightpurple;
+    top: -56px;
+    left: -15px;
+    z-index: 10;
+    text-align: center;
+
+    @media (min-width: variables.$bp-tablet) {
+      width: 178px;
+      height: 40px;
+      padding: 4px 0 0;
+    }
+
+    @media (min-width: variables.$bp-laptop) {
+      width: 200px;
+      height: 40px;
+      padding: 4px 0 0;
+    }
+
+    @media (min-width: variables.$bp-desktop) {
+      width: 280px;
+      height: 30px;
+      padding: 8px 0 0;
+    }
+  }
+
+  .error-value.error-user-name::before {
+    content: 'Please input a valid name (e.g. "Aaa")';
+  }
+
+  .error-value.error-user-email::before {
+    content: "Please input a valid email";
+  }
+
+  .error-value.error-user-message::before {
+    content: "Please input from 10 to 300 symbols";
+  }
+
+  .review-form-userinfo-wrapper {
+    display: flex;
+
+    @media (320px <= width <= calc((variables.$bp-tablet) - 1px)) {
+      flex-direction: column;
+      gap: 24px;
+    }
+
+    @media (min-width: variables.$bp-tablet) {
+      flex-direction: row;
+      justify-content: space-between;
+    }
+  }
+
+  #user-is-save-data {
+    display: none;
+  }
+
+  .user-is-save-data-icon {
+    display: none;
+  }
+
+  .user-is-save-data-custombox {
+    box-sizing: border-box;
+    border: 1px solid variables.$textmain;
+    width: 16px;
+    height: 16px;
+    flex-shrink: 0;
+  }
+
+  #user-is-save-data:checked + .user-is-save-data-custombox {
+    border: none;
+    background-color: variables.$purple;
+
+    & .user-is-save-data-icon {
+      display: inline-block;
+      z-index: 10;
+    }
+  }
+
+  .user-is-save-data-label {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+    position: static;
+    font-size: 13px;
+    pointer-events: visible;
+  }
+
+  button.button {
+    width: 90px;
+    height: 40px;
+    padding: 13px 21px;
+  }
+}
+
+// modal form - logIn
+.error-value.error-modal-email::before {
+  content: "Please input a valid email";
+}
+
+.error-value.error-modal-password::before {
+  content: "Please input a valid password (1 Upper letter, 1 number)";
+}
+
+.modal {
+  .form input {
+    margin-bottom: 30px;
+
+    @media (320px <= width <= calc((variables.$bp-tablet) - 1px)) {
+      max-width: 300px;
+      margin-bottom: 40px;
+    }
+  }
+
+  .modal-btnbox {
+    #modal-remember {
+      display: none;
+    }
+
+    .modal-remember-icon {
+      display: none;
+    }
+
+    .modal-remember-custombox {
+      box-sizing: border-box;
+      border: 1px solid variables.$textmain;
+      width: 16px;
+      height: 16px;
+    }
+
+    #modal-remember:checked + .modal-remember-custombox {
+      border: none;
+      background-color: variables.$purple;
+
+      & .modal-remember-icon {
+        display: inline-block;
+        z-index: 10;
+      }
+    }
+
+    .modal-remember-label {
+      display: flex;
+      gap: 15px;
+      align-items: center;
+      position: static;
+      font-size: 9px;
+      pointer-events: visible;
+      margin-bottom: 0;
+    }
+  }
+
+  @media (320px <= width <= calc((variables.$bp-tablet) - 1px)) {
+    .error-modal-email.error-value::before,
+    .error-modal-password.error-value::before {
+      height: 36px;
+    }
+  }
+}

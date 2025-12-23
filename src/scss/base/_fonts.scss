@@ -1,0 +1,356 @@
+@use "../abstracts/variables";
+
+$folder: "../assets/fonts/";
+
+// mixin for font-face
+@mixin font-face($family, $filename, $weight) {
+  @font-face {
+    font-family: $family;
+    src: url("#{$folder}/#{$filename}.ttf") format("truetype");
+    font-weight: $weight;
+    font-style: normal;
+  }
+}
+
+// font variables
+$mainfamily: "Montserrat";
+$secondfamily: "Helvetica Neue";
+$thirdfamily: "SF Pro";
+$fourthfamily: "Inter";
+$fifthfamily: "SF Compact Rounded";
+
+// fonts definitions for different pages
+@include font-face($mainfamily, "MontserratBlack", 900);
+
+h1 {
+  font-weight: 900;
+  font-family: $mainfamily;
+  color: variables.$black;
+
+  @media (320px <= width <= calc((variables.$bp-tablet) - 1px)) {
+    font-size: 24px;
+  }
+
+  @media (min-width: variables.$bp-tablet) {
+    font-size: 30px;
+  }
+
+  @media (min-width: variables.$bp-laptop) {
+    font-size: 50px;
+  }
+}
+
+h2 {
+  font-weight: 900;
+  font-family: $mainfamily;
+  color: variables.$black;
+
+  @media (320px <= width <= calc((variables.$bp-tablet) - 1px)) {
+    font-size: 20px;
+  }
+
+  @media (min-width: variables.$bp-tablet) {
+    font-size: 24px;
+  }
+
+  @media (min-width: variables.$bp-laptop) {
+    font-size: 32px;
+  }
+
+  @media (min-width: variables.$bp-desktop) {
+    font-size: 40px;
+  }
+}
+
+@include font-face($fourthfamily, "InterRegular", 700);
+
+h3 {
+  font-weight: 700;
+  font-family: $fourthfamily;
+  color: variables.$white;
+
+  @media (320px <= width <= calc((variables.$bp-tablet) - 1px)) {
+    font-size: 17px;
+  }
+
+  @media (min-width: variables.$bp-tablet) {
+    font-size: 19px;
+  }
+}
+
+@include font-face($secondfamily, "HelveticaNeueBold", 700);
+
+h4,
+.footer-about-header {
+  font-weight: 700;
+  font-family: $secondfamily;
+  color: variables.$black;
+
+  @media (320px <= width <= calc((variables.$bp-tablet) - 1px)) {
+    font-size: 11px;
+  }
+
+  @media (min-width: variables.$bp-tablet) {
+    font-size: 12px;
+  }
+
+  @media (min-width: variables.$bp-laptop) {
+    font-size: 15px;
+  }
+}
+
+@include font-face($mainfamily, "MontserratRegular", 400);
+
+.text-main {
+  font-weight: 400;
+  font-family: $mainfamily;
+  color: variables.$textmain;
+
+  @media (320px <= width <= calc((variables.$bp-tablet) - 1px)) {
+    font-size: 11px;
+  }
+
+  @media (min-width: variables.$bp-tablet) {
+    font-size: 12px;
+  }
+
+  @media (min-width: variables.$bp-laptop) {
+    font-size: 15px;
+  }
+
+  @media (min-width: variables.$bp-desktop) {
+    font-size: 17px;
+  }
+}
+
+@include font-face($secondfamily, "HelveticaNeueMedium", 500);
+
+.footer-benefits-text {
+  font-weight: 500;
+  font-family: $secondfamily;
+  color: variables.$white;
+
+  @media (320px <= width <= calc((variables.$bp-tablet) - 1px)) {
+    font-size: 9px;
+  }
+
+  @media (min-width: variables.$bp-tablet) {
+    font-weight: 400;
+    font-size: 10px;
+  }
+
+  @media (min-width: variables.$bp-laptop) {
+    font-size: 15px;
+  }
+}
+
+@include font-face($secondfamily, "HelveticaNeueRegular", 400);
+
+.footer-about-text {
+  font-weight: 400;
+  font-family: $secondfamily;
+  color: variables.$black;
+
+  @media (320px <= width <= calc((variables.$bp-tablet) - 1px)) {
+    font-size: 9px;
+  }
+
+  @media (min-width: variables.$bp-tablet) {
+    font-size: 10px;
+  }
+
+  @media (min-width: variables.$bp-laptop) {
+    font-size: 15px;
+  }
+}
+
+@include font-face($fourthfamily, "InterRegular", 400);
+
+.footer-copyright-text {
+  font-weight: 400;
+  font-family: $fourthfamily;
+  color: variables.$copyright;
+
+  @media (320px <= width <= calc((variables.$bp-tablet) - 1px)) {
+    font-size: 9px;
+  }
+
+  @media (min-width: variables.$bp-tablet) {
+    font-size: 10px;
+  }
+
+  @media (min-width: variables.$bp-laptop) {
+    font-size: 14px;
+  }
+}
+
+@include font-face($mainfamily, "MontserratSemiBold", 600);
+
+.header-usermenu-counter {
+  font-weight: 600;
+  font-family: $mainfamily;
+  color: variables.$purple;
+
+  @media (320px <= width <= calc((variables.$bp-tablet) - 1px)) {
+    font-size: 9px;
+  }
+
+  @media (min-width: variables.$bp-tablet) {
+    font-size: 12px;
+  }
+}
+
+@include font-face($mainfamily, "MontserratBold", 700);
+
+.header-logo-text {
+  font-family: $mainfamily;
+  font-weight: 700;
+  color: variables.$purple;
+
+  @media (320px <= width <= calc((variables.$bp-tablet) - 1px)) {
+    font-size: 24px;
+
+    &.product-card-info-name {
+      font-size: 14px;
+    }
+  }
+
+  @media (min-width: variables.$bp-tablet) {
+    font-size: 22px;
+  }
+
+  @media (min-width: variables.$bp-laptop) {
+    font-size: 30px;
+  }
+}
+
+.header-nav-text {
+  font-family: $mainfamily;
+  color: variables.$black;
+
+  @media (320px <= width <= calc((variables.$bp-tablet) - 1px)) {
+    font-size: 16px;
+
+    &.error-user-name,
+    &.error-user-email,
+    &.error-user-topic,
+    &.error-user-message,
+    &.product-card-info-selectitem-header {
+      margin-top: 8px;
+      font-size: 12px;
+    }
+  }
+
+  @media (min-width: variables.$bp-tablet) {
+    font-weight: 600;
+    font-size: 12px;
+  }
+
+  @media (min-width: variables.$bp-laptop) {
+    font-weight: 700;
+    font-size: 16px;
+  }
+
+  @media (min-width: variables.$bp-desktop) {
+    font-size: 18px;
+  }
+}
+
+@include font-face($thirdfamily, "SFProBold", 700);
+
+.button.selected-products-addbutton {
+  font-family: $thirdfamily;
+  font-weight: 700;
+
+  @media (320px <= width <= calc((variables.$bp-tablet) - 1px)) {
+    font-size: 12px;
+  }
+
+  @media (min-width: variables.$bp-tablet) {
+    font-size: 15px;
+  }
+
+  @media (min-width: variables.$bp-laptop) {
+    font-size: 17px;
+  }
+}
+
+.review-form button.button {
+  font-weight: 700;
+  font-family: $secondfamily;
+  font-size: 12px;
+  color: variables.$white;
+}
+
+@include font-face($fifthfamily, "SFCompactRoundedBold", 700);
+
+.cart-main-table p.cart-counter {
+  font-weight: 700;
+  font-family: $fifthfamily;
+  color: variables.$black;
+
+  @media (320px <= width <= calc((variables.$bp-tablet) - 1px)) {
+    font-size: 14px;
+  }
+
+  @media (min-width: variables.$bp-tablet) {
+    font-size: 18px;
+  }
+
+  @media (min-width: variables.$bp-laptop) {
+    font-size: 22px;
+  }
+
+  @media (min-width: variables.$bp-desktop) {
+    font-size: 25px;
+  }
+}
+
+.cart-main-table th,
+.cart-main-table td {
+  font-family: $thirdfamily;
+  font-weight: 700;
+  color: variables.$white;
+
+  @media (320px <= width <= calc((variables.$bp-tablet) - 1px)) {
+    font-size: 10px;
+  }
+
+  @media (min-width: variables.$bp-tablet) {
+    font-size: 14px;
+  }
+
+  @media (min-width: variables.$bp-laptop) {
+    font-size: 16px;
+  }
+
+  @media (min-width: variables.$bp-desktop) {
+    font-size: 18px;
+  }
+}
+
+.cart-main-table td {
+  color: variables.$black;
+}
+
+.cart-main-table button.cart-increment {
+  font-weight: 700;
+  font-family: $thirdfamily;
+  color: variables.$black;
+
+  @media (320px <= width <= calc((variables.$bp-tablet) - 1px)) {
+    font-size: 18px;
+  }
+
+  @media (min-width: variables.$bp-tablet) {
+    font-size: 24px;
+  }
+
+  @media (min-width: variables.$bp-laptop) {
+    font-size: 32px;
+  }
+
+  @media (min-width: variables.$bp-desktop) {
+    font-size: 34px;
+  }
+}

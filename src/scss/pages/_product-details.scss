@@ -1,0 +1,260 @@
+@use "../base/fonts";
+@use "../base/reset";
+@use "../abstracts/mixins";
+@use "../abstracts/variables";
+
+// product details section
+.product-details-subsection-list {
+  display: flex;
+  justify-content: space-between;
+
+  @media (min-width: variables.$bp-tablet) {
+    padding: 0 80px;
+    font-size: 13px;
+  }
+
+  @media (min-width: variables.$bp-laptop) {
+    padding: 0 180px;
+    font-size: 15px;
+  }
+
+  @media (min-width: variables.$bp-desktop) {
+    padding: 0 370px;
+    font-size: 17px;
+  }
+}
+
+.product-details-subsection-item {
+  position: relative;
+  background-color: transparent;
+  border: none;
+
+  &.active::after {
+    content: "";
+    position: absolute;
+    width: 90%;
+    border: 1px solid variables.$purple;
+    bottom: -9px;
+    left: 5%;
+  }
+
+  @media (320px <= width <= calc((variables.$bp-tablet) - 1px)) {
+    font-size: 13px;
+    margin-bottom: 24px;
+  }
+
+  @media (min-width: variables.$bp-tablet) {
+    font-size: 17px;
+    margin-bottom: 40px;
+  }
+}
+
+.product-details-subsection-details {
+  display: flex;
+  flex-direction: column;
+  gap: 35px;
+  line-height: 1.8em;
+  margin-bottom: 100px;
+}
+
+.product-details-subsection-reviews {
+  @media (320px <= width <= calc((variables.$bp-tablet) - 1px)) {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+  }
+
+  @media (min-width: variables.$bp-tablet) {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 145px;
+  }
+}
+
+.product-details-exist-header,
+.product-details-reviews-header {
+  @media (320px <= width <= calc((variables.$bp-tablet) - 1px)) {
+    font-size: 14px;
+  }
+
+  @media (min-width: variables.$bp-tablet) {
+    font-size: 13px;
+  }
+
+  @media (min-width: variables.$bp-laptop) {
+    font-size: 15px;
+  }
+
+  @media (min-width: variables.$bp-desktop) {
+    font-size: 17px;
+  }
+}
+
+.product-details-exist-header {
+  @media (320px <= width <= calc((variables.$bp-tablet) - 1px)) {
+    margin-bottom: 24px;
+  }
+
+  @media (min-width: variables.$bp-tablet) {
+    margin-bottom: 32px;
+  }
+
+  @media (min-width: variables.$bp-laptop) {
+    margin-bottom: 60px;
+  }
+
+  @media (min-width: variables.$bp-desktop) {
+    margin-bottom: 92px;
+  }
+}
+
+.product-reviews-exist {
+  display: flex;
+  gap: 25px;
+}
+
+.product-reviews-exist-img {
+  width: 46px;
+  height: 46px;
+  flex-shrink: 0;
+}
+
+.product-reviews-exist-info {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 30px;
+}
+
+.product-reviews-exist-info span {
+  font-size: 13px;
+  color: variables.$stroke-header;
+}
+
+#product-reviews-stars {
+  display: flex;
+  gap: 5px;
+
+  img {
+    width: 17px;
+    height: 16px;
+  }
+}
+
+.product-reviews-exist-text {
+  color: variables.$black;
+}
+
+.product-details-reviews-header {
+  margin-bottom: 20px;
+}
+
+.product-details-reviews-text {
+  font-size: 13px;
+  color: variables.$black;
+  margin-bottom: 30px;
+}
+
+.product-details-reviews-rate {
+  display: flex;
+  gap: 16px;
+
+  @media (320px <= width <= calc((variables.$bp-tablet) - 1px)) {
+    font-size: 10px;
+  }
+
+  @media (min-width: variables.$bp-tablet) {
+    font-size: 13px;
+  }
+}
+
+#product-add-reviews-stars {
+  display: flex;
+  gap: 5px;
+
+  li:hover {
+    transform: scale(1.5);
+  }
+
+  img {
+    width: 17px;
+    height: 16px;
+  }
+}
+
+// product also like section
+.product-also-like-wrapper {
+  @media (320px <= width <= calc((variables.$bp-tablet) - 1px)) {
+    margin-top: 24px;
+    margin-bottom: 24px;
+    gap: 24px;
+  }
+
+  @media (min-width: variables.$bp-tablet) {
+    margin-top: 32px;
+    margin-bottom: 32px;
+    gap: 40px;
+  }
+
+  @media (min-width: variables.$bp-laptop) {
+    margin-top: 40px;
+    margin-bottom: 40px;
+    gap: 70px;
+  }
+
+  @media (min-width: variables.$bp-desktop) {
+    margin-top: 100px;
+    margin-bottom: 123px;
+  }
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .product-also-like-header {
+    color: variables.$black;
+    position: relative;
+
+    @media (320px <= width <= calc((variables.$bp-tablet) - 1px)) {
+      width: 240px;
+    }
+
+    @media (min-width: variables.$bp-tablet) {
+      width: 282px;
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      border: 1px solid variables.$purple;
+      bottom: -10px;
+      left: 0;
+
+      @media (320px <= width <= calc((variables.$bp-tablet) - 1px)) {
+        width: 220px;
+      }
+
+      @media (min-width: variables.$bp-tablet) {
+        width: 282px;
+      }
+    }
+  }
+
+  .product-also-like-list {
+    @media (320px <= width <= calc((variables.$bp-tablet) - 1px)) {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+    }
+
+    @media (min-width: variables.$bp-laptop) {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 40px;
+      grid-template-rows: 460px;
+    }
+
+    @media (min-width: variables.$bp-desktop) {
+      grid-template-rows: 569px;
+    }
+  }
+}
