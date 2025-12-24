@@ -35,6 +35,10 @@
   display: none;
 }
 
+textarea {
+  resize: none;
+}
+
 // use mixin for container width
 @include mixins.container-width(
   variables.$bp-tablet,

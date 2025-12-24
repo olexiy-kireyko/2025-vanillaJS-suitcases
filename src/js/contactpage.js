@@ -36,12 +36,27 @@ form.addEventListener("submit", formSubmit);
 // submit form function
 function formSubmit(e) {
   e.preventDefault();
-  if (
-    checkFormValue(user_name, USER_NAME_REGEX, user_name_label) &&
-    checkFormValue(user_email, USER_EMAIL_REGEX, user_email_label) &&
-    checkFormValue(user_topic, USER_TOPIC_REGEX, user_topic_label) &&
-    checkFormValue(user_message, USER_MESSAGE_REGEX, user_message_label)
-  ) {
+  const nameCheck = checkFormValue(user_name, USER_NAME_REGEX, user_name_label);
+
+  const emailCheck = checkFormValue(
+    user_email,
+    USER_EMAIL_REGEX,
+    user_email_label
+  );
+
+  const topicCheck = checkFormValue(
+    user_topic,
+    USER_TOPIC_REGEX,
+    user_topic_label
+  );
+
+  const messageCheck = checkFormValue(
+    user_message,
+    USER_MESSAGE_REGEX,
+    user_message_label
+  );
+
+  if (nameCheck && emailCheck && topicCheck && messageCheck) {
     form.reset();
     showMessage("success", "Successed submit your feedback! Thank you!");
   }

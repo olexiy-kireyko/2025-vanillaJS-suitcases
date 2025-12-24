@@ -7,10 +7,18 @@ import {
 
 import { checkFormValue } from "./utils.js";
 
-// load html-components logic
+// load html-components logic (with caching from SessionStorage)
 export async function loadHTML(id, url, isChangePath) {
-  const res = await fetch(url);
-  let text = await res.text();
+  let text;
+  const cached = sessionStorage.getItem(id);
+  if (cached) {
+    text = cached;
+  } else {
+    const res = await fetch(url);
+    text = await res.text();
+    sessionStorage.setItem(id, text);
+  }
+
   if (isChangePath !== undefined) {
     // change path if page is not homepage
     text = text.replace(/\.\/assets/g, "../assets");
@@ -207,7 +215,7 @@ export async function showAuthorization(e, isHomePage = false) {
 
   const modalWindow = ` <div class="message-box modal-box">
       <div class="modal">
-        <form id="modal-form" class="form" enctype="text/plain">
+        <form id="modal-form" class="form" enctype="text/plain" novalidate>
           <label
             for="modal-email-label"
             id="modal-email-label"
@@ -317,10 +325,19 @@ export async function showAuthorization(e, isHomePage = false) {
 
   function logIn(e) {
     e.preventDefault();
-    if (
-      checkFormValue(modal_email, USER_EMAIL_REGEX, modal_email_label) &&
-      checkFormValue(modal_password, USER_PASSWORD_REGEX, modal_password_label)
-    ) {
+
+    const emailCheck = checkFormValue(
+      modal_email,
+      USER_EMAIL_REGEX,
+      modal_email_label
+    );
+    const passwordCheck = checkFormValue(
+      modal_password,
+      USER_PASSWORD_REGEX,
+      modal_password_label
+    );
+
+    if (emailCheck && passwordCheck) {
       modal_form.reset();
       document.body.firstElementChild.remove();
       showMessage("success", "Successfully Log In!");
@@ -334,8 +351,13 @@ export async function showAuthorization(e, isHomePage = false) {
   modal_password_forgetbtn.addEventListener("click", passwordForget);
 
   async function passwordForget(e) {
-    if (checkFormValue(modal_email, USER_EMAIL_REGEX, modal_email_label)) {
-      e.preventDefault();
+    e.preventDefault();
+    const emailCheck = checkFormValue(
+      modal_email,
+      USER_EMAIL_REGEX,
+      modal_email_label
+    );
+    if (emailCheck) {
       modal_form.reset();
       document.body.firstElementChild.remove();
       showMessage("success", "Your password sent to your email!");
