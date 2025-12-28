@@ -13,7 +13,9 @@
   "scripts": {
     "compile": "sass ./src/scss:./src/dist --no-source-map --update",
     "build": "sass ./src/scss:./src/dist --no-source-map --update",
-    "lint": "npx eslint ./src/js/*.js && npx stylelint ./src/scss/*/*.scss && npx stylelint ./src/scss/main.scss"
+    "lint": "npx eslint ./src/js/*.js && npx stylelint ./src/scss/*/*.scss && npx stylelint ./src/scss/main.scss",
+    "prepare:pages": "rimraf docs && xcopy src docs /E /I /Y",
+    "deploy": "npm run prepare:pages && gh-pages -d docs"
   },
   "dependencies": {
     "sass": "^1.92.1"
@@ -21,6 +23,7 @@
   "devDependencies": {
     "@eslint/js": "^9.37.0",
     "eslint": "^9.37.0",
+    "gh-pages": "^6.3.0",
     "globals": "^16.4.0",
     "stylelint": "^16.25.0",
     "stylelint-config-standard": "^39.0.0",
