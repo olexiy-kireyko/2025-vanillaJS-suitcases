@@ -14,7 +14,7 @@
     "compile": "sass ./src/scss:./src/dist --no-source-map --update",
     "build": "sass ./src/scss:./src/dist --no-source-map --update",
     "lint": "npx eslint ./src/js/*.js && npx stylelint ./src/scss/*/*.scss && npx stylelint ./src/scss/main.scss",
-    "prepare:pages": "rimraf docs && xcopy src docs /E /I /Y",
+    "prepare:pages": "rimraf docs && xcopy src docs /E /I /Y && echo.>docs\\.nojekyll",
     "deploy": "npm run prepare:pages && gh-pages -d docs"
   },
   "dependencies": {
