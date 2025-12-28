@@ -9,8 +9,8 @@ import {
 } from "./main.js";
 
 // load html-components (header, footer)
-await loadHTML("header", "./components/header.html");
-await loadHTML("footer", "./components/footer.html");
+await loadHTML("header", "./src/components/header.html");
+await loadHTML("footer", "./src/components/footer.html");
 
 // update cart counter in header
 updateCartCounter();

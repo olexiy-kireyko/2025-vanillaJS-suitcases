@@ -37,7 +37,10 @@ await loadHTML("product-section", "../components/product-card.html", false);
 
 // update product card info and image
 const product_card_main_img = document.getElementById("product-card-main-img");
-product_card_main_img.src = `.${currentProduct.imageUrl}`;
+product_card_main_img.src = currentProduct.imageUrl.replace(
+  /\.\/src\/assets/g,
+  "../assets"
+);
 product_card_main_img.alt = currentProduct.name;
 
 const product_card_info_name = document.getElementById(

@@ -21,9 +21,9 @@ export async function loadHTML(id, url, isChangePath) {
 
   if (isChangePath !== undefined) {
     // change path if page is not homepage
-    text = text.replace(/\.\/assets/g, "../assets");
-    text = text.replace(/\.\/index\.html/g, "../index.html");
-    text = text.replace(/\.\/pages\//g, "./");
+    text = text.replace(/\.\/src\/assets/g, "../assets");
+    text = text.replace(/\.\/index\.html/g, "../../index.html");
+    text = text.replace(/\.\/src\/pages\//g, "./");
   }
   document.getElementById(id).innerHTML = text;
 }
@@ -54,7 +54,7 @@ export async function pageLinkColoration(pageName) {
 
 // load json-data logic
 export async function loadJSON(isHomePage) {
-  let path = isHomePage ? "./assets/data.json" : "../assets/data.json";
+  let path = isHomePage ? "./src/assets/data.json" : "../assets/data.json";
   const res = await fetch(path)
     .then((response) => {
       if (!response.ok) {
@@ -158,7 +158,7 @@ export async function drawProducts(
       }
       //change path if page is not homepage
       if (!isHomePage) {
-        item.imageUrl = "." + item.imageUrl;
+        item.imageUrl = item.imageUrl.replace(/\.\/src\/assets/g, "../assets");
       }
 
       return `<li class="selected-products-item">
