@@ -168,7 +168,7 @@ export async function drawProducts(
     <a data-id=${item.id} class="button selected-products-addbutton" href="${
         !isHomePage
           ? "./product-details-template.html"
-          : "./pages/product-details-template.html"
+          : "./src/pages/product-details-template.html"
       }">
       ${buttonText}
     </a>${

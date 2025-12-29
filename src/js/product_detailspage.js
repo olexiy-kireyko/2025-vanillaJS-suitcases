@@ -89,11 +89,18 @@ async function selectOption(e) {
   const elem = e.target;
   const selectValue = elem.dataset.selectValue;
   if (selectValue === undefined) return;
+  // hide ul-element after "click"
+  elem.parentElement.style.display = "none";
 
   // change select value and style if "click" on li
   const parentElem = e.currentTarget;
   parentElem.firstElementChild.textContent = selectValue;
   parentElem.firstElementChild.classList.add("active");
+
+  // return ul-element default display status
+  setTimeout(() => {
+    elem.parentElement.style.display = "";
+  }, 100);
 }
 
 // -------- "add to cart" logic
@@ -296,7 +303,7 @@ export async function drawRandomProducts(
       }
       //change path if page is not homepage
       if (!isHomePage) {
-        item.imageUrl = "." + item.imageUrl;
+        item.imageUrl = item.imageUrl.replace(/\.\/src\/assets/g, "../assets");
       }
 
       return `<li class="selected-products-item">

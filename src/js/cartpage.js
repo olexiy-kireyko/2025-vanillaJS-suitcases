@@ -49,7 +49,10 @@ async function drawMainTable(isCheckout = false) {
       .map((item) => {
         const id = item.id;
         const currentProduct = mainData.find((item) => item.id === id);
-        currentProduct.imageUrl = `.${currentProduct.imageUrl}`;
+        currentProduct.imageUrl = currentProduct.imageUrl.replace(
+          /\.\/src\/assets/g,
+          "../assets"
+        );
         return ` <tr>
                   <td><img src=${currentProduct.imageUrl} alt=${
           currentProduct.name
