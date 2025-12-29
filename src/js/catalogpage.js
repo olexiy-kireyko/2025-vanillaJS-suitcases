@@ -81,7 +81,7 @@ export async function drawTopBestSets() {
   const topBestSetsBox = document.getElementById("catalog-topbest-list");
   const resultHTMLText = topBestSets
     .map((item) => {
-      item.imageUrl = "." + item.imageUrl;
+      item.imageUrl = item.imageUrl.replace(/\.\/src\/assets/, "../assets");
       let starsRow = stars(item.popularity);
       return `<li class="catalog-topbest-item">
                     <img
